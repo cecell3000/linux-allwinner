@@ -1414,19 +1414,7 @@ static int snd_sun4i_codec_suspend(struct platform_device *pdev,pm_message_t sta
 	printk("[audio codec]:suspend start5000\n");
 	gpio_write_one_pin_value(gpio_pa_shutdown, 0, "audio_pa_ctrl");
 	mdelay(50);
-	codec_wr_control(SUN4I_ADC_ACTL, 0x1, PA_ENABLE, 0x0);
-	mdelay(100);
-	//pa mute
-	codec_wr_control(SUN4I_DAC_ACTL, 0x1, PA_MUTE, 0x0);
-	mdelay(500);
-    //disable dac analog
-	codec_wr_control(SUN4I_DAC_ACTL, 0x1, 	DACAEN_L, 0x0);
-	codec_wr_control(SUN4I_DAC_ACTL, 0x1, 	DACAEN_R, 0x0);
-
-	//disable dac to pa
-	codec_wr_control(SUN4I_DAC_ACTL, 0x1, 	DACPAS, 0x0);
-	codec_wr_control(SUN4I_DAC_DPC ,  0x1, DAC_EN, 0x0);
-
+	
 	clk_disable(codec_moduleclk);
 	printk("[audio codec]:suspend end\n");
 	return 0;

@@ -738,11 +738,25 @@ config  TOUCHSCREEN_GT801
        help
           GT801 touchscreen driver
 
+<<<<<<< HEAD
 config TOUCHSCREEN_GT801NI
 	tristate "hack to load binary module for GT801NI"
 	depends on I2C
 	help
 	muito bla bla bla
+=======
+config  TOUCHSCREEN_GT811
+       tristate  "dpt microelctronics gt811 touchscreen driver"
+       depends on I2C
+       help
+          GT811 touchscreen driver
+
+config  TOUCHSCREEN_GT818
+       tristate  "dpt microelctronics gt818 touchscreen driver"
+       depends on I2C
+       help
+          GT801 touchscreen driver
+>>>>>>> upstream/sunxi-3.0
 
 config  TOUCHSCREEN_SUN4I_TS
        tristate  "sun4i-ts touchscreen driver"
